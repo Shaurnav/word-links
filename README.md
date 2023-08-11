@@ -1,2 +1,2 @@
 # word-links
-Inspired by NYT's connections, WordLinks is a fun game that allows users to create their own custom games and play more than once per day
+Inspired by NYT's Connections, WordLinks is a word categories game that also allows players to create their own custom shareable games and play an unlimited number of times. 
