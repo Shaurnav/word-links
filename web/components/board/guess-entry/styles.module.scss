@@ -1,0 +1,27 @@
+.input {
+  border-radius: .5rem;
+  font-size: x-large;
+  text-align: center;
+
+  &:hover {
+    border-color: aqua;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline-color: aqua;
+  }
+}
+
+.startAndEnd {
+  border-radius: .5rem;
+  font-size: x-large;
+  text-align: center;
+  outline-color: green;
+
+  &:disabled {
+    background-color: greenyellow;
+  }
+
+  
+}
