@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import GuessEntry from "./guess-entry"
 import styles from './styles.module.scss'
+import { IState } from "@/interfaces";
 
 const initialState = {
-  solution: ["hello", "world", "coin", "base"],
   layout: [
     {
       word: "hello",
@@ -26,25 +26,14 @@ const initialState = {
   choosing: true,
 }
 
-interface IWord {
-  word: string,
-  revealed: string,
-}
-interface IState {
-  solution: string[],
-  layout: IWord[],
-  clues: number,
-  choosing: boolean,  
-}
-
 //if we are not choosing, we've selected a given piece, then
 //the background color for that specific gamepiece is solid...
 export default function Board() {
   const [state, setState] = useState<IState>(initialState);
 
-  useEffect(() => {
-
-  }, [state?.choosing])
+  // useEffect(() => {
+  //   console.log(state);
+  // }, state.layout.map(({revealed}) => revealed));
 
   return (
     <div className={styles.gameContainer}>
@@ -56,10 +45,20 @@ export default function Board() {
             disabled = true;
           }
 
-
-          return <GuessEntry key={index} revealed={revealed} initialDisabled={disabled}/>
+          console.log(revealed);
+          return (
+            <GuessEntry 
+              key={index}
+              revealed={revealed} 
+              initialDisabled={disabled} 
+              correctWord={word}
+              state={state} 
+              setState={setState}
+            />
+          );
         })
       }
+      <h3>Clues Used: {state.clues}</h3>
       
     </div>
   )
