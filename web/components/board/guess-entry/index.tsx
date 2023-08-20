@@ -60,13 +60,36 @@ export default function GuessEntry({revealed, initialDisabled, correctWord, stat
           choosing: true,
         }
 
-        //extra clue should show up without the clue counter going up...
-
         setDisabled(true);
         setState(newState);
       } else {
         //change layout by one character
         //update the count in state,
+        //we should be sure to change the style for a quick sec??
+
+        //we know that input is definitely NOT correct...
+        //release clue on where you are...
+        //we know that revealed is always a subset of correct word
+        const newCharacter = correctWord.replace(revealed, "")[0];
+
+        const newLayout = state.layout.map(({word, revealed}) => {
+          if (word === correctWord) {
+            return {word: word, revealed: revealed + newCharacter}
+          }
+
+          return {word: word, revealed: revealed};
+        });
+
+        const newState = {
+          ...state,
+          layout: newLayout,
+          choosing: true,
+          clues: state.clues + 1,
+        };
+
+
+        setState(newState);
+        setInput(revealed + newCharacter);
       }
     }
   }

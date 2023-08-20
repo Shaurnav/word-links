@@ -31,10 +31,6 @@ const initialState = {
 export default function Board() {
   const [state, setState] = useState<IState>(initialState);
 
-  // useEffect(() => {
-  //   console.log(state);
-  // }, state.layout.map(({revealed}) => revealed));
-
   return (
     <div className={styles.gameContainer}>
       <h1>game</h1>
@@ -45,7 +41,6 @@ export default function Board() {
             disabled = true;
           }
 
-          console.log(revealed);
           return (
             <GuessEntry 
               key={index}
