@@ -11,6 +11,11 @@ export default function Header() {
         <Link href="/" className={`${styles.logo}`}>
           <h3>WordLinks</h3>
         </Link>
+        <Link href="/login" className={`${styles.loginButton}`}>
+          <button>
+            Log In
+          </button>
+        </Link>
       </nav>
     </header>
 );

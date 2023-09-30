@@ -32,5 +32,18 @@
         -webkit-text-fill-color: transparent;     
       }
     }
+
+    .loginButton {
+      
+      button {
+        font-size: large;
+        background-color: white;
+        border-radius: .25rem;
+        border-color: black;
+        margin: 1rem;
+        padding: .25rem;
+        
+      }
+    }  
   }
 }
