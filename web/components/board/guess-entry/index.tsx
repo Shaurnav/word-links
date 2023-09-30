@@ -87,7 +87,6 @@ export default function GuessEntry({revealed, initialDisabled, correctWord, stat
           clues: state.clues + 1,
         };
 
-
         setState(newState);
         setInput(revealed + newCharacter);
       }

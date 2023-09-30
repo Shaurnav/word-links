@@ -14,6 +14,14 @@ const initialState = {
       revealed: "w",
     },
     {
+      word: "joy",
+      revealed: "",
+    },
+    {
+      word: "shreyas",
+      revealed: "",
+    },
+    {
       word: "coin",
       revealed: "",
     },
@@ -54,7 +62,6 @@ export default function Board() {
         })
       }
       <h3>Clues Used: {state.clues}</h3>
-      
     </div>
   )
 
