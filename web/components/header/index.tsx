@@ -9,7 +9,7 @@ export default function Header() {
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <Link href="/" className={`${styles.logo}`}>
-          <h3>WordLinks</h3>
+          <h3>WordLinks!</h3>
         </Link>
         <Link href="/login" className={`${styles.loginButton}`}>
           <button>
