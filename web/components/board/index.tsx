@@ -18,7 +18,7 @@ const initialState = {
       revealed: "",
     },
     {
-      word: "shreyas",
+      word: "shreyas1",
       revealed: "",
     },
     {
