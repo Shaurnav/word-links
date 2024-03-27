@@ -11,12 +11,12 @@ const generateInitialState = () => {
   const puzzles = [
     {
       layout: [
-        { word: "hello", revealed: "hello" },
-        { word: "world", revealed: "w" },
-        { word: "joy", revealed: "" },
-        { word: "shreyas1", revealed: "" },
-        { word: "coin", revealed: "" },
-        { word: "base", revealed: "base" },
+        { word: "brain", revealed: "brain" },
+        { word: "stem", revealed: "s" },
+        { word: "cell", revealed: "" },
+        { word: "phone", revealed: "" },
+        { word: "book", revealed: "" },
+        { word: "worm", revealed: "" },
       ],
       clues: 0,
       choosing: true,
