@@ -3,41 +3,60 @@ import GuessEntry from "./guess-entry"
 import styles from './styles.module.scss'
 import { IState } from "@/interfaces";
 
-const initialState = {
-  layout: [
+// Function to generate the initial state of the game board based on the date
+const generateInitialState = () => {
+  const date = new Date();
+  const day = date.getDate(); // Get the current day of the month
+  // Define your puzzles for each day of the month here
+  const puzzles = [
     {
-      word: "hello",
-      revealed: "hello",
+      layout: [
+        { word: "hello", revealed: "hello" },
+        { word: "world", revealed: "w" },
+        { word: "joy", revealed: "" },
+        { word: "shreyas1", revealed: "" },
+        { word: "coin", revealed: "" },
+        { word: "base", revealed: "base" },
+      ],
+      clues: 0,
+      choosing: true,
     },
+    // Define other puzzles for other days of the month here...
     {
-      word: "world",
-      revealed: "w",
-    },
-    {
-      word: "joy",
-      revealed: "",
-    },
-    {
-      word: "shreyas1",
-      revealed: "",
-    },
-    {
-      word: "coin",
-      revealed: "",
-    },
-    {
-      word: "base",
-      revealed: "base",
-    },
-  ],
-  clues: 0,
-  choosing: true,
-}
+      layout: [
+        { word: "shreyas", revealed: "shreyas" },
+        { word: "loves", revealed: "l" },
+        { word: "learning", revealed: "" },
+        { word: "new", revealed: "" },
+        { word: "things", revealed: "" },
+        { word: "yay", revealed: "yay" },
+      ],
+      clues: 0,
+      choosing: true,
+    }
+
+  ];
+
+  // Use the day of the month to select the puzzle for the current day
+  //const selectedPuzzle = puzzles[(day - 1) % puzzles.length]; // Subtract 1 because arrays are zero-indexed
+  const selectedPuzzle = puzzles[1];
+
+  return selectedPuzzle;
+};
+
 
 //if we are not choosing, we've selected a given piece, then
 //the background color for that specific gamepiece is solid...
 export default function Board() {
-  const [state, setState] = useState<IState>(initialState);
+  const [state, setState] = useState<IState>(generateInitialState());
+
+  useEffect(() => {
+    // Regenerate the initial state whenever the component mounts
+    setState(generateInitialState());
+  }, []);
+
+
+
 
   return (
     <div className={styles.gameContainer}>
