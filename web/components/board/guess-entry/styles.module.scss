@@ -5,12 +5,12 @@
   margin: .5rem;
 
   &:hover {
-    border-color: aqua;
+    border-color: rgb(68, 0, 255);
     cursor: pointer;
   }
 
   &:focus {
-    outline-color: aqua;
+    outline-color: rgb(68, 0, 255);
   }
 }
 
