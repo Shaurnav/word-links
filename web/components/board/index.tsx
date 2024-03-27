@@ -39,7 +39,7 @@ const generateInitialState = () => {
 
   // Use the day of the month to select the puzzle for the current day
   //const selectedPuzzle = puzzles[(day - 1) % puzzles.length]; // Subtract 1 because arrays are zero-indexed
-  const selectedPuzzle = puzzles[1];
+  const selectedPuzzle = puzzles[day-27];
 
   return selectedPuzzle;
 };
