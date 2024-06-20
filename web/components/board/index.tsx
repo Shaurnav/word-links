@@ -16,7 +16,7 @@ const generateInitialState = () => {
         { word: "cell", revealed: "" },
         { word: "phone", revealed: "" },
         { word: "book", revealed: "" },
-        { word: "worm", revealed: "wor" },
+        { word: "worm", revealed: "worm" },
       ],
       clues: 0,
       choosing: true,
