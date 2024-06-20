@@ -11,7 +11,7 @@ const generateInitialState = () => {
   const puzzles = [
     {
       layout: [
-        { word: "brain1", revealed: "brain" },
+        { word: "brain", revealed: "brain" },
         { word: "stem", revealed: "s" },
         { word: "cell", revealed: "" },
         { word: "phone", revealed: "" },
