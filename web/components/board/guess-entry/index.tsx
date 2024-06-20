@@ -1,7 +1,6 @@
-import { ChangeEvent, Dispatch, ReactHTMLElement, SetStateAction, useEffect, useState } from 'react';
-import styles from './styles.module.scss'
-import React from 'react';
 import { IState } from '@/interfaces';
+import React, { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
+import styles from './styles.module.scss';
 
 export type GuessEntryProps = {
   revealed: string,
