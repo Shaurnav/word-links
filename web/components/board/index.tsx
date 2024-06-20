@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react"
+import GuessEntry from "./guess-entry"
+import styles from './styles.module.scss'
 import { IState } from "@/interfaces";
-import { useEffect, useState } from "react";
-import GuessEntry from "./guess-entry";
-import styles from './styles.module.scss';
 
 // Function to generate the initial state of the game board based on the date
 const generateInitialState = () => {
@@ -34,7 +34,6 @@ const generateInitialState = () => {
       clues: 0,
       choosing: true,
     }
-    
 
   ];
 
