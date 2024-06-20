@@ -16,7 +16,7 @@ const generateInitialState = () => {
         { word: "cell", revealed: "" },
         { word: "phone", revealed: "" },
         { word: "book", revealed: "" },
-        { word: "worm", revealed: "" },
+        { word: "worm", revealed: "wor" },
       ],
       clues: 0,
       choosing: true,
@@ -49,32 +49,6 @@ const generateInitialState = () => {
 //the background color for that specific gamepiece is solid...
 export default function Board() {
   const [state, setState] = useState<IState>(generateInitialState());
-  const [showModal, setShowModal] = useState(false);
-
-  const handleShowModal = () => {
-    setShowModal(true);
-  };
-
-  const handleShareEmojis = () => {
-    const shareEmojis = () => {
-      const cluesUsed = state.clues;
-      const totalEmojis = 6;
-      const emojis = Array(totalEmojis).fill('⬛');
-      for (let i = 0; i < cluesUsed; i++) {
-        emojis[i] = '🟩';
-      }
-      return emojis.join(' ');
-    };
-
-    const copyToClipboard = () => {
-      const emojis = shareEmojis();
-      navigator.clipboard.writeText(emojis).then(() => {
-        alert('Emojis copied to clipboard!');
-      }, (err) => {
-        console.error('Could not copy text: ', err);
-      });
-    };    
-  };
 
   useEffect(() => {
     // Regenerate the initial state whenever the component mounts
@@ -107,13 +81,6 @@ export default function Board() {
         })
       }
       <h3>Clues Used: {state.clues}</h3>
-      {showModal && (
-        <div className={styles.modal}>
-          <h2>Clues Used: {state.clues}</h2>
-          <button onClick={handleShareEmojis}>Share Emojis</button>
-        </div>
-      )}
-      <button onClick={handleShowModal}>Show Clues Used</button>
     </div>
   )
 
